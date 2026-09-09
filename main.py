@@ -39,7 +39,6 @@ class Block_1(nn.Module):
         x=x+atten
         x=x+self.mlp(self.rms2(x))
         x=self.head(x)
-        #x=self.dropout(x)
         return x
 
 
@@ -69,7 +68,6 @@ class Block_2(nn.Module):
         x=x+atten
         x=x+self.mlp(self.rms2(x))
         x=self.head(x)
-        #x=self.dropout(x)
         return x
 
 
@@ -315,10 +313,7 @@ if __name__=="__main__":
                 _,predict=torch.max(pridect,1)
                 total_corect+=(predict==target.to(device)).sum().item()
 
-                # for t,i in zip(text,predict):
-                #     print(f"{t} {i}")
             
-                #print(f"\rval_loss : {val_loss}",end="",flush=True)
         val_loss/=80
         validation_acuracy=100*total_corect/valid_total
         acuracy.append(validation_acuracy)
