@@ -1,0 +1,225 @@
+---
+language:
+- en
+- ru
+- uk
+- de
+- es
+- am
+- zh
+- ar
+- hi
+- it
+- fr
+- he
+- ja
+- tt
+license: openrail++
+size_categories:
+- 10K<n<100K
+task_categories:
+- text-classification
+dataset_info:
+  features:
+  - name: text
+    dtype: string
+  - name: toxic
+    dtype: int64
+  splits:
+  - name: en
+    num_bytes: 411178
+    num_examples: 5000
+  - name: ru
+    num_bytes: 710001
+    num_examples: 5000
+  - name: uk
+    num_bytes: 630595
+    num_examples: 5000
+  - name: de
+    num_bytes: 941017
+    num_examples: 5000
+  - name: es
+    num_bytes: 978750
+    num_examples: 5000
+  - name: am
+    num_bytes: 1102628
+    num_examples: 5000
+  - name: zh
+    num_bytes: 359235
+    num_examples: 5000
+  - name: ar
+    num_bytes: 889661
+    num_examples: 5000
+  - name: hi
+    num_bytes: 1842662
+    num_examples: 5000
+  - name: it
+    num_bytes: 791069
+    num_examples: 5000
+  - name: fr
+    num_bytes: 621103
+    num_examples: 5000
+  - name: he
+    num_bytes: 243823
+    num_examples: 2011
+  - name: hin
+    num_bytes: 836167
+    num_examples: 4363
+  - name: tt
+    num_bytes: 764917
+    num_examples: 5000
+  - name: ja
+    num_bytes: 714729
+    num_examples: 5000
+  download_size: 6802095
+  dataset_size: 11837535
+configs:
+- config_name: default
+  data_files:
+  - split: en
+    path: data/en-*
+  - split: ru
+    path: data/ru-*
+  - split: uk
+    path: data/uk-*
+  - split: de
+    path: data/de-*
+  - split: es
+    path: data/es-*
+  - split: am
+    path: data/am-*
+  - split: zh
+    path: data/zh-*
+  - split: ar
+    path: data/ar-*
+  - split: hi
+    path: data/hi-*
+  - split: it
+    path: data/it-*
+  - split: fr
+    path: data/fr-*
+  - split: he
+    path: data/he-*
+  - split: hin
+    path: data/hin-*
+  - split: tt
+    path: data/tt-*
+  - split: ja
+    path: data/ja-*
+---
+
+# Multilingual Toxicity Detection Dataset
+
+**[2025]** We extend our binary toxicity classification dataset to **more languages**! Now also covered: Italian, French, Hebrew, Hindglish, Japanese, Tatar. The data is prepared for [TextDetox 2025](https://pan.webis.de/clef25/pan25-web/text-detoxification.html) shared task.
+
+**[2024]** For the shared task [TextDetox 2024](https://pan.webis.de/clef24/pan24-web/text-detoxification.html), we provide a compilation of binary toxicity classification datasets for each language.
+Namely, for each language, we provide 5k subparts of the datasets -- 2.5k toxic and 2.5k non-toxic samples.
+
+The list of original sources:
+* English: [Jigsaw](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge), [Unitary AI Toxicity Dataset](https://github.com/unitaryai/detoxify)
+* Russian: [Russian Language Toxic Comments](https://www.kaggle.com/datasets/blackmoon/russian-language-toxic-comments), [Toxic Russian Comments](https://www.kaggle.com/datasets/alexandersemiletov/toxic-russian-comments)
+* Ukrainian: [ours](https://huggingface.co/datasets/ukr-detect/ukr-toxicity-dataset)
+* Spanish: [CLANDESTINO, the Spanish toxic language dataset](https://github.com/microsoft/Clandestino/tree/main)
+* German: [DeTox-Dataset](https://github.com/hdaSprachtechnologie/detox), [GemEval 2018, 2021](https://aclanthology.org/2021.germeval-1.1/)
+* Amhairc: [Amharic Hate Speech](https://github.com/uhh-lt/AmharicHateSpeech)
+* Arabic: [OSACT4](https://edinburghnlp.inf.ed.ac.uk/workshops/OSACT4/)
+* Hindi: [Hostility Detection Dataset in Hindi](https://competitions.codalab.org/competitions/26654#learn_the_details-dataset), [Overview of the HASOC track at FIRE 2019: Hate Speech and Offensive Content Identification in Indo-European Languages](https://dl.acm.org/doi/pdf/10.1145/3368567.3368584?download=true)
+* Italian: [AMI](https://github.com/dnozza/ami2020), [HODI](https://github.com/HODI-EVALITA/HODI_2023), [Jigsaw Multilingual Toxic Comment](https://www.kaggle.com/competitions/jigsaw-multilingual-toxic-comment-classification/overview)
+* French: []
+* Hebrew: [Hebrew Offensive Language Dataset](https://github.com/NataliaVanetik/HebrewOffensiveLanguageDatasetForTheDetoxificationProject/blob/main/OLaH-dataset-filtered.xlsx)
+* Hinglish: []
+* Japanese: [filtered](https://huggingface.co/datasets/sobamchan/ja-toxic-text-classification-open2ch) [2chan posts](https://huggingface.co/datasets/p1atdev/open2ch) by Perspective API;
+* Tatar: ours. 
+
+All credits go to the authors of the original corpora.
+
+## Citation
+If you would like to acknowledge our work, please, cite the following manuscripts:
+
+**[2024]**
+
+```
+@inproceedings{dementieva2024overview,
+  title={Overview of the Multilingual Text Detoxification Task at PAN 2024},
+  author={Dementieva, Daryna and Moskovskiy, Daniil and Babakov, Nikolay and Ayele, Abinew Ali and Rizwan, Naquee and Schneider, Frolian and Wang, Xintog and Yimam, Seid Muhie and Ustalov, Dmitry and Stakovskii, Elisei and Smirnova, Alisa and Elnagar, Ashraf and Mukherjee, Animesh and Panchenko, Alexander},
+  booktitle={Working Notes of CLEF 2024 - Conference and Labs of the Evaluation Forum},
+  editor={Guglielmo Faggioli and Nicola Ferro and Petra Galu{\v{s}}{\v{c}}{\'a}kov{\'a} and Alba Garc{\'i}a Seco de Herrera},
+  year={2024},
+  organization={CEUR-WS.org}
+}
+```
+
+```
+@inproceedings{dementieva-etal-2024-toxicity,
+    title = "Toxicity Classification in {U}krainian",
+    author = "Dementieva, Daryna  and
+      Khylenko, Valeriia  and
+      Babakov, Nikolay  and
+      Groh, Georg",
+    editor = {Chung, Yi-Ling  and
+      Talat, Zeerak  and
+      Nozza, Debora  and
+      Plaza-del-Arco, Flor Miriam  and
+      R{\"o}ttger, Paul  and
+      Mostafazadeh Davani, Aida  and
+      Calabrese, Agostina},
+    booktitle = "Proceedings of the 8th Workshop on Online Abuse and Harms (WOAH 2024)",
+    month = jun,
+    year = "2024",
+    address = "Mexico City, Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.woah-1.19/",
+    doi = "10.18653/v1/2024.woah-1.19",
+    pages = "244--255",
+    abstract = "The task of toxicity detection is still a relevant task, especially in the context of safe and fair LMs development. Nevertheless, labeled binary toxicity classification corpora are not available for all languages, which is understandable given the resource-intensive nature of the annotation process. Ukrainian, in particular, is among the languages lacking such resources. To our knowledge, there has been no existing toxicity classification corpus in Ukrainian. In this study, we aim to fill this gap by investigating cross-lingual knowledge transfer techniques and creating labeled corpora by: (i){\textasciitilde}translating from an English corpus, (ii){\textasciitilde}filtering toxic samples using keywords, and (iii){\textasciitilde}annotating with crowdsourcing. We compare LLMs prompting and other cross-lingual transfer approaches with and without fine-tuning offering insights into the most robust and efficient baselines."
+}
+```
+
+```
+@inproceedings{DBLP:conf/ecir/BevendorffCCDEFFKMMPPRRSSSTUWZ24,
+  author       = {Janek Bevendorff and
+                  Xavier Bonet Casals and
+                  Berta Chulvi and
+                  Daryna Dementieva and
+                  Ashaf Elnagar and
+                  Dayne Freitag and
+                  Maik Fr{\"{o}}be and
+                  Damir Korencic and
+                  Maximilian Mayerl and
+                  Animesh Mukherjee and
+                  Alexander Panchenko and
+                  Martin Potthast and
+                  Francisco Rangel and
+                  Paolo Rosso and
+                  Alisa Smirnova and
+                  Efstathios Stamatatos and
+                  Benno Stein and
+                  Mariona Taul{\'{e}} and
+                  Dmitry Ustalov and
+                  Matti Wiegmann and
+                  Eva Zangerle},
+  editor       = {Nazli Goharian and
+                  Nicola Tonellotto and
+                  Yulan He and
+                  Aldo Lipani and
+                  Graham McDonald and
+                  Craig Macdonald and
+                  Iadh Ounis},
+  title        = {Overview of {PAN} 2024: Multi-author Writing Style Analysis, Multilingual
+                  Text Detoxification, Oppositional Thinking Analysis, and Generative
+                  {AI} Authorship Verification - Extended Abstract},
+  booktitle    = {Advances in Information Retrieval - 46th European Conference on Information
+                  Retrieval, {ECIR} 2024, Glasgow, UK, March 24-28, 2024, Proceedings,
+                  Part {VI}},
+  series       = {Lecture Notes in Computer Science},
+  volume       = {14613},
+  pages        = {3--10},
+  publisher    = {Springer},
+  year         = {2024},
+  url          = {https://doi.org/10.1007/978-3-031-56072-9\_1},
+  doi          = {10.1007/978-3-031-56072-9\_1},
+  timestamp    = {Fri, 29 Mar 2024 23:01:36 +0100},
+  biburl       = {https://dblp.org/rec/conf/ecir/BevendorffCCDEFFKMMPPRRSSSTUWZ24.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+```
