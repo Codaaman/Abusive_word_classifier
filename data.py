@@ -13,18 +13,6 @@ x0_train,x0_test,y0_train,y0_test=train_test_split(X,Y,train_size=0.8,random_sta
 d={}
 d["text"]=x0_train.tolist()
 d["label"]=y0_train.tolist()
-# print(d)
-# print(x0_train.shape)
-# print(x0_test.shape)
-
-# print(y0_train.shape)
-# print(y0_test.shape)
-
-# data=DataLoader([(x,y) for x,y in zip(x0_test.tolist(),y0_test.tolist())],batch_size=16,shuffle=True)
-
-# for text,label in list(data):
-#     print(label,label.size())
-
 
 
 def trainning():
